@@ -1,4 +1,4 @@
 ---
-title: "3D Print Stamps — Research & Industry News"
-description: "Technical articles and industry news for custom rubber stamp and die 3D printing professionals."
+title: "Solar Manufacturing Insights"
+description: "Technical guides on 3D printing for solar energy systems, PV mounting, and concentrated solar power."
 ---

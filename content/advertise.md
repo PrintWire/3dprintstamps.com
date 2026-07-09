@@ -1,31 +1,28 @@
 ---
-title: "Advertise on 3D Print Stamps"
-type: "page"
+title: "Advertise on 3D Print Solar"
+description: "Reach solar engineers, PV system designers, and renewable energy procurement teams."
 layout: "advertise"
-description: "Reach engineers and buyers in custom rubber stamp and die 3D printing via 3dprintstamps.com."
-heroImage: "https://images.unsplash.com/photo-1569437061241-a848be43cc82?w=1920&q=80"
-audience:
-  - icon: "📮"
-    title: "Industry Engineers"
-    text: "Technical professionals sourcing custom rubber stamp and die 3D printing solutions."
-  - icon: "🏭"
-    title: "Procurement Officers"
-    text: "Buyers making $10K–$500K purchasing decisions."
-  - icon: "🔬"
-    title: "R&D Specialists"
-    text: "Researchers evaluating new processes and materials."
-rates:
-  - name: "Banner Ad"
-    price: "$500"
-    period: "per month"
-    features: ["728x90 leaderboard","Homepage placement","Monthly reporting"]
-  - name: "Sponsored Content"
-    price: "$1,200"
-    period: "per month"
-    features: ["Technical article feature","Social amplification","Brand association"]
-    featured: true
-  - name: "Network Package"
-    price: "$3,500"
-    period: "per month"
-    features: ["All PrintWire sites","194-site exposure","Priority placement"]
 ---
+
+## Advertise on 3D Print Solar
+
+Our audience includes solar installers, PV system designers, renewable energy researchers,
+and procurement engineers sourcing custom hardware for non-standard solar installations.
+
+### Audience Profile
+
+- **Job titles:** PV system engineer, solar project developer, CSP researcher, energy procurement manager
+- **Industry:** Solar installation, renewable energy, agricultural solar, architectural BIPV, off-grid systems
+- **Intent:** Specifying custom mounting hardware, evaluating materials for outdoor PV components
+
+### Advertising Packages
+
+| Package | Rate | Placement |
+|---------|------|-----------|
+| Banner Ad (728×90) | $500/month | Homepage leaderboard |
+| Sponsored Content | $1,200/month | Featured article placement |
+| Network Package | $3,500/month | All PrintWire energy sites |
+
+**Ideal partners:** Solar mounting hardware manufacturers, UV-stabilized polymer suppliers, SLS/DMLS service bureaus, BOS component distributors.
+
+**Contact:** maxdavisgroup@gmail.com
