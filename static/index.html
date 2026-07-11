@@ -94,36 +94,10 @@
 
     <div class="ed-section-label">
       Analysis &amp; Deep Dives
-      <a href="#">View All &rarr;</a>
+      <a href="/articles/">View All &rarr;</a>
     </div>
-    <div class="ed-list">
-      <article class="ed-list-item">
-        <img src="images/st01_wax_seal.png" alt="Wax Seals">
-        <div>
-          <span class="ed-badge">Wax Seals</span>
-          <div class="ed-card-meta">June 29, 2026 · 8 min read</div>
-          <h3><a href="#">Custom Wax Seals: From 3D Model to Heirloom Quality</a></h3>
-          <p class="ed-card-excerpt">How to design, print, and cast brass wax-seal stamps that rival traditional hand-engraved dies.</p>
-        </div>
-      </article>
-      <article class="ed-list-item">
-        <img src="images/st08_rubber_resin.png" alt="Materials">
-        <div>
-          <span class="ed-badge">Materials</span>
-          <div class="ed-card-meta">June 26, 2026 · 7 min read</div>
-          <h3><a href="#">Resin vs Rubber: Choosing the Right Material for 3D Printed Stamps</a></h3>
-          <p class="ed-card-excerpt">Flexible resins, TPU, and silicone — each has tradeoffs for ink transfer, durability, and detail.</p>
-        </div>
-      </article>
-      <article class="ed-list-item">
-        <img src="images/st03_embossing_die.png" alt="Embossing">
-        <div>
-          <span class="ed-badge">Embossing</span>
-          <div class="ed-card-meta">June 22, 2026 · 9 min read</div>
-          <h3><a href="#">Printed Embossing Dies Bring Letterpress Home</a></h3>
-          <p class="ed-card-excerpt">Desktop-printed dies are putting debossed stationery and blind embossing within reach of small studios.</p>
-        </div>
-      </article>
+    <div class="ed-list" id="pwDeepDives">
+      <div style="padding:1.5rem;color:var(--text-faint);">Loading analysis…</div>
     </div>
 
     <div class="ed-section-label">
@@ -433,6 +407,31 @@ document.querySelector('.ed-nav-toggle')?.addEventListener('click', () => {
       ? top.map(card).join('')
       : '<div style="grid-column:1/-1;text-align:center;padding:2rem;color:var(--text-faint);">Unable to load news.</div>';
   }
+})();
+
+// -- Analysis & Deep Dives: PrintWire catalog in list format --
+(function(){
+  var box = document.getElementById('pwDeepDives');
+  if (!box) return;
+  function esc(s){var d=document.createElement('div');d.appendChild(document.createTextNode(s==null?'':s));return d.innerHTML;}
+  var empty = '<div style="padding:1.5rem;color:var(--text-faint);">In-depth analysis and deep dives are on the way — check back soon.</div>';
+  fetch('network.json',{cache:'no-store'})
+    .then(function(r){ return r.ok ? r.json() : []; })
+    .then(function(items){
+      items = (items || []).slice();
+      items.sort(function(a,b){ return (b.iso||'').localeCompare(a.iso||''); });
+      if (!items.length){ box.innerHTML = empty; return; }
+      box.innerHTML = items.slice(0,8).map(function(a){
+        var img = a.img ? '<img src="'+esc(a.img)+'" alt="" loading="lazy">' : '';
+        var meta = esc(a.date||'') + (a.origin ? ' · '+esc(a.origin) : '');
+        return '<article class="ed-list-item">'+img+'<div>'+
+          '<div class="ed-card-meta">'+meta+'</div>'+
+          '<h3><a href="'+esc(a.url)+'">'+esc(a.title)+'</a></h3>'+
+          '<p class="ed-card-excerpt">'+esc(a.summary||'')+'</p>'+
+          '</div></article>';
+      }).join('');
+    })
+    .catch(function(){ box.innerHTML = empty; });
 })();
 </script>
 </body>
